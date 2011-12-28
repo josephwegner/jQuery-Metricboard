@@ -46,7 +46,7 @@ function textList(domObj) {
 					alert(json.error);
 				} else {
 					thisTextList.lastId = json.lastID;
-					thisTextList.drawData(json.items);
+					thisTextList.drawData(json.items.reverse());
 				}
 			},
 			error: function(msg) {
