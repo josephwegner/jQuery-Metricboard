@@ -1,0 +1,81 @@
+body {
+	background-color: #050505;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+}
+
+.fLeft {
+	float: left;
+}
+
+.fRight {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.column {
+	height: 100%;
+	width: 33%;
+	float: left;
+}
+
+.highlight {
+	color: #00BDFF;
+}
+
+.halfWidth {
+	width: 50%;
+	padding: 0;
+	margin: 0;
+}
+
+.oneThirdHeight {
+	height: 33%;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#dailyUploads {
+	width: 100%;
+}
+/*Textlist widget*/
+.textList .header {
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #C2C2C2;
+}
+.textList ul {
+	list-style-type: none;
+	padding: 0;
+}
+.textList li {
+	padding: 10px 0 10px 0;
+	border-bottom: 1px solid #525252;
+}
+
+/*Number widget*/
+
+.widget .numberNumber {
+	font-size: 6em;
+	display: block;
+	text-align: center;
+}
+
+.widget .numberText {
+	font-size: 2em;
+	display: block;
+	text-align: center;
+}
+
+/*Single Line Widget*/
+
