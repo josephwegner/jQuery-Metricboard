@@ -3,7 +3,7 @@
 	if(!is_numeric($_POST['count'])) die();
 
 	//connect to DB
-	$db_conn = mssql_connect("LENOVO1\Presidio", "sa", "Password!") or die("Error connecting to server (mssql_connect)");
+	$db_conn = mssql_connect("192.2.40.76\Presidio", "sa", "Password!") or die("Error connecting to server (mssql_connect)");
 
 	// Select DB
 	mssql_select_db("PSI", $db_conn) or die("Error choosing database (mssql_select_db)");
