@@ -51,7 +51,7 @@ $(document).ready(function() {
 			<li><span class='slColumn'>Saturday</span><span class='slValue'>4</span></li>
 		</ul>
 	</div>-->
-	<div class="widget halfHeight" id="operationPercent" widget="pieChart" refresh-url="dataGrabbers/operationPercents.php" refresh-rate="30" title="Activity">
+	<div class="widget halfHeight" id="operationPercent" widget="pieChart" refresh-url="dataGrabbers/operationPercents.php" refresh-rate="3" title="Daily Activity">
 	</div>
 	<div class="widget textList" id="proofsOut" style="margin-bottom: 15%" widget="textList" useID="" refresh-url="dataGrabbers/proofsOut.php" refresh-rate="30" max="7">
 		<span class="header">Proofs Out</span>

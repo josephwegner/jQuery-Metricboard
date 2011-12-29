@@ -100,7 +100,10 @@ function pieChart(domObj) {
 	this.init = function(domObj) {
 		this.domObj = domObj;
 		this.url = $(domObj).attr('refresh-url');
-
+		this.rate = $(domObj).attr('refresh-rate');
+		this.points = {};
+		this.numPoints = 0;
+		
 		var height = $(domObj).height();
 		
 		this.chart = new Highcharts.Chart({
@@ -136,11 +139,17 @@ function pieChart(domObj) {
 			},
 			series: [{
 				type: 'pie',
-				name: 'Prepress Activity'
+				name: $(domObj).attr('title')
+
 			}]
 		});
 
 		this.refreshData();
+
+		var thisPieChart = this;
+
+		setInterval(function() { thisPieChart.refreshData(); }, this.rate * 1000);
+
 	};
 
 	this.refreshData = function() {
@@ -152,11 +161,18 @@ function pieChart(domObj) {
 			success: function(msg) {
 				var json = $.parseJSON(msg);
 
+				var dataPoints = [];
 				for(op in json) {
-					thisPieChart.chart.series[0].addPoint({
-						"name": op,
-						"y": json[op]
-					});
+					if(typeof(thisPieChart.points[op]) == "undefined") {
+						thisPieChart.chart.series[0].addPoint({
+							"name": op,
+							"y": json[op]
+						});
+						thisPieChart.points[op] = thisPieChart.numPoints;
+						thisPieChart.numPoints++;
+					} else {
+						thisPieChart.chart.series[0].data[thisPieChart.points[op]].update(y = json[op]);
+					}
 				}
 			},
 			error: function(msg) {
