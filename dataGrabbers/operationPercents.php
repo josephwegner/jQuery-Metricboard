@@ -7,7 +7,8 @@
 	mssql_select_db("PSI", $db_conn) or die("Error choosing database (mssql_select_db)");
 
 	// Query DB
-	$sql = "SELECT SUM(dblDuration) AS sum, sOpDesc FROM vwSNTodaysActivityEmpStatus WHERE lEmployeeKey IN (17,16,21,10,12,8,18) GROUP BY sOpDesc";
+//	$sql = "SELECT SUM(dblDuration) AS sum, sOpDesc FROM vwSNTodaysActivityEmpStatus WHERE lEmployeeKey IN (17,16,21,10,12,8,18) GROUP BY sOpDesc";
+	$sql = "SELECT SUM(dblDuration) AS sum, sOpDesc FROM vwSNTodaysActivityEmpStatus WHERE sOpDesc IN ('# Per Page Commercial', '#Per Page Digital', '#Per Page Packaging') GROUP BY sOpDesc";
 
 	$query_result = mssql_query($sql);
 
@@ -21,10 +22,10 @@
 
 	$percent = array();
 
-	foreach($sums as $op => $time) {
+/*	foreach($sums as $op => $time) {
 		if(($time / $total) < 0.02) unset($sums[$op]);
 	}
-
+*/
 	echo json_encode($sums);
 	
 ?>
