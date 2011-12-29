@@ -15,7 +15,7 @@
 <script type="text/javascript">
 var charts;
 $(document).ready(function() {
-	$(".column").height($("body").height());
+//	$(".column").height($("body").height());
 	
 	charts = $.initMetrics();
 });
@@ -40,7 +40,7 @@ $(document).ready(function() {
 	<div class="clear"></div>
 </div>
 <div class="column" id="column2">
-	<div class='widget oneThirdHeight' id='dailyUploads' widget='singleLine'>
+	<!--<div class='widget oneThirdHeight' id='dailyUploads' widget='singleLine'>
 		<ul class='slData'>
 			<li><span class='slColumn'>Sunday</span><span class='slValue'>3</span></li>
 			<li><span class='slColumn'>Monday</span><span class='slValue'>8</span></li>
@@ -50,27 +50,12 @@ $(document).ready(function() {
 			<li><span class='slColumn'>Friday</span><span class='slValue'>9</span></li>
 			<li><span class='slColumn'>Saturday</span><span class='slValue'>4</span></li>
 		</ul>
+	</div>-->
+	<div class="widget halfHeight" id="operationPercent" widget="pieChart" refresh-url="dataGrabbers/operationPercents.php" refresh-rate="30" title="Activity">
 	</div>
-	<div class='widget oneThirdHeight' id='monthlyUploads' widget='singleLine'>
-		<ul class='slData'>
-			<li><span class='slColumn'>June</span><span class='slValue'>100</span></li>
-			<li><span class='slColumn'>July</span><span class='slValue'>150</span></li>
-			<li><span class='slColumn'>August</span><span class='slValue'>160</span></li>
-			<li><span class='slColumn'>September</span><span class='slValue'>120</span></li>
-			<li><span class='slColumn'>October</span><span class='slValue'>90</span></li>
-			<li><span class='slColumn'>November</span><span class='slValue'>110</span></li>
-			<li><span class='slColumn'>December</span><span class='slValue'>100</span></li>
-		</ul>
-	</div>
-	<div class='widget oneThirdHeight' id='dailyUploads3' widget='singleLine'>
-		<ul class='slData'>
-			<li><span class='slColumn'>Sunday</span><span class='slValue'>3</span></li>
-			<li><span class='slColumn'>Monday</span><span class='slValue'>8</span></li>
-			<li><span class='slColumn'>Tuesday</span><span class='slValue'>6</span></li>
-			<li><span class='slColumn'>Wednesday</span><span class='slValue'>7</span></li>
-			<li><span class='slColumn'>Thursday</span><span class='slValue'>5</span></li>
-			<li><span class='slColumn'>Friday</span><span class='slValue'>9</span></li>
-			<li><span class='slColumn'>Saturday</span><span class='slValue'>4</span></li>
+	<div class="widget textList" id="proofsOut" style="margin-bottom: 15%" widget="textList" useID="" refresh-url="dataGrabbers/proofsOut.php" refresh-rate="30" max="7">
+		<span class="header">Proofs Out</span>
+		<ul>
 		</ul>
 	</div>
 	<div class="clear"></div>

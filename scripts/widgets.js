@@ -95,7 +95,78 @@ function textList(domObj) {
 	this.init(domObj);
 	
 };
+function pieChart(domObj) {
 
+	this.init = function(domObj) {
+		this.domObj = domObj;
+		this.url = $(domObj).attr('refresh-url');
+
+		var height = $(domObj).height();
+		
+		this.chart = new Highcharts.Chart({
+			chart: {
+				renderTo: $(domObj).attr('id'),
+				height: height,
+				width: $(domObj).width(),
+				backgroundColor: "#050505"
+			},
+			credits: {
+				enabled: false
+			},	
+			title: {
+				text: $(domObj).attr('title'),
+				style: {
+					color: '#FFFFFF'
+				}
+			},
+			plotOptions: {
+				pie: {
+					showInLegend: true,
+					dataLabels: {
+						enabled: false
+					}
+				}
+			},
+			legend: {
+				align: "left",
+				width: $(domObj).width() / 2.5,
+				floating: true,
+				backgroundColor: "#FFFFFF",
+				layout: "vertical"
+			},
+			series: [{
+				type: 'pie',
+				name: 'Prepress Activity'
+			}]
+		});
+
+		this.refreshData();
+	};
+
+	this.refreshData = function() {
+		var thisPieChart = this;
+
+		$.ajax({
+			type: "POST",
+			url: this.url,
+			success: function(msg) {
+				var json = $.parseJSON(msg);
+
+				for(op in json) {
+					thisPieChart.chart.series[0].addPoint({
+						"name": op,
+						"y": json[op]
+					});
+				}
+			},
+			error: function(msg) {
+				alert(error);
+			}
+		});
+	};
+
+	this.init(domObj);
+}
 function numberWidget(domObj) {
 
 	this.init = function(domObj) {
@@ -170,6 +241,12 @@ function numberWidget(domObj) {
 				
 					charts[$(this).attr('id')] = new numberWidget($(this));
 					
+					break;
+				
+				case "pieChart":
+		
+					charts[$(this).attr('id')] = new pieChart($(this));				
+				
 					break;
 
 				case "singleLine":

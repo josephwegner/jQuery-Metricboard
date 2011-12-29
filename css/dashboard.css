@@ -1,3 +1,6 @@
+html {
+	height: 100%;
+}
 body {
 	background-color: #050505;
 	font-family: 'Montserrat', sans-serif;
@@ -35,6 +38,14 @@ h1 {
 	width: 50%;
 	padding: 0;
 	margin: 0;
+}
+
+.halfHeight {
+	height: 50%;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .oneThirdHeight {
