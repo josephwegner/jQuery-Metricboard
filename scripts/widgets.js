@@ -56,14 +56,13 @@ function textList(domObj) {
 	};
 
 	this.drawData = function(htmlArray, index) {
-
+	
 		var thisTextList = this;
 
 		if(typeof(index) == "undefined") index = 0;
-
-		if(typeof(htmlArray[index]) !== "undefined") {	
+		
+		if(typeof(htmlArray[index]) !== "undefined") {
 			if(this.useID) {
-
 				var newHTML = $(htmlArray[index]);
 
 				$(newHTML).hide();
@@ -76,11 +75,13 @@ function textList(domObj) {
 				$(newHTML).fadeIn(500, function() { thisTextList.drawData(htmlArray, index + 1); }); 
 			} else {
 				if($(this.domObj).find("li:nth-child(" + (index + 1) + ")").length === 1) {
-					if($(this.domObj).find("li:nth-child(" + (index + 1) + ")").html() !== htmlArray[index]) {
-						$(this.domObj).find("li:nth-child(" + index + ")").fadeOut(500, function() {
+					if($(this.domObj).find("li:nth-child(" + (index + 1) + ")").html() !== $(htmlArray[index]).html()) {
+						$(this.domObj).find("li:nth-child(" + (index + 1)+ ")").fadeOut(500, function() {
 							$(this).replaceWith(htmlArray[index]);
 							$(this).fadeIn(500, function() { thisTextList.drawData(htmlArray, index + 1); });
 						});
+					} else {
+						thisTextList.drawData(htmlArray, index + 1);
 					}
 				} else {
 					var newHTML = $(htmlArray[index]);

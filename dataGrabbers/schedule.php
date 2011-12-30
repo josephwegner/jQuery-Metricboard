@@ -9,7 +9,7 @@
 	mssql_select_db("PSI", $db_conn) or die("Error choosing database (mssql_select_db)");
 
 	// Query DB
-	$sql = "SELECT TOP ".$_POST['count']." * FROM vwListViewMilestoneSche WHERE lMilestoneKey = 1123 ORDER BY dtScheduled ASC";
+	$sql = "SELECT TOP ".$_POST['count']." * FROM vwListViewMilestoneSche WHERE lMilestoneKey = 1123 ORDER BY dtScheduled DESC";
 	
 	$query_result = mssql_query($sql);
 
