@@ -43,14 +43,14 @@ function textList(domObj) {
 				var json = $.parseJSON(msg);
 				
 				if(json.error) {
-					alert(json.error);
+					console.log(json.error);
 				} else {
 					thisTextList.lastId = json.lastID;
 					thisTextList.drawData(json.items.reverse());
 				}
 			},
 			error: function(msg) {
-				alert(msg);
+				console.log(msg);
 			}		
 		});
 	};
@@ -177,7 +177,7 @@ function pieChart(domObj) {
 				}
 			},
 			error: function(msg) {
-				alert(error);
+				console.log(error);
 			}
 		});
 	};
@@ -230,7 +230,7 @@ function numberWidget(domObj) {
 				}
 			},
 			error: function(msg) {
-				alert(msg);
+				console.log(msg);
 			}
 		});
 
