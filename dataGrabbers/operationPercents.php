@@ -8,8 +8,8 @@
 
 	// Query DB
 //	$sql = "SELECT SUM(dblDuration) AS sum, sOpDesc FROM vwSNTodaysActivityEmpStatus WHERE lEmployeeKey IN (17,16,21,10,12,8,18) GROUP BY sOpDesc";
-	$sql = "SELECT SUM(dblDuration) AS sum, sOpDesc FROM vwSNTodaysActivityEmpStatus WHERE sOpDesc IN ('# Per Page Commercial', '#Per Page Digital', '#Per Page Packaging') GROUP BY sOpDesc";
-
+	$sql = "SELECT SUM(dblDuration) AS sum, sOpDesc FROM vwSNTodaysActivityEmpStatus WHERE sOpDesc IN ('Digital Prep', 'Commercial Prep', 'Packaging Prep', 'Structural Design') GROUP BY sOpDesc";
+	
 	$query_result = mssql_query($sql);
 
 	$sums = array();
