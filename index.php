@@ -24,16 +24,16 @@ $(document).ready(function() {
 <body>
 <h1>Prepress Metricboard</h1>
 <div class="column" id="column1">
-	<div class="widget textList" id="recentUploads" style="margin-bottom: 15%;" widget="textList" refresh-url="<?=$fileDropURL;?>/config/metricboardPoll/fileList.php" refresh-rate="3" max="10" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
+	<div class="widget textList" id="recentUploads" style="margin-bottom: 15%;" widget="textList" refresh-url="dataGrabbers/fileList.php" refresh-rate="3" max="10" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
 		<span class="header">Recent Uploads</span>
 		<ul>
 		</ul>
 	</div>
-	<div class="fLeft widget halfWidth" id="numNonDownloaded" widget='number' refresh-url="<?=$fileDropURL;?>/config/metricboardPoll/numFiles.php" refresh-rate="3" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
+	<div class="fLeft widget halfWidth" id="numNonDownloaded" widget='number' refresh-url="dataGrabbers/numFiles.php" refresh-rate="3" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
 		<span class='numberNumber'>0</span>
 		<span class='numberText'>new files</span>
 	</div>
-	<div class="fLeft widget halfWidth" id="numUsers" widget='number' refresh-url="<?=$fileDropURL;?>/config/metricboardPoll/loggedUsers.php" refresh-rate="3" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
+	<div class="fLeft widget halfWidth" id="numUsers" widget='number' refresh-url="dataGrabbers/loggedUsers.php" refresh-rate="3" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
 		<span class='numberNumber'>0</span>
 		<span class='numberText'>users logged in</span>
 	</div>
