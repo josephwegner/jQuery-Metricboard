@@ -22,7 +22,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<h1>Prepress Metricboard</h1>
+<h1>Metricboard</h1>
 <div class="column" id="column1">
 	<div class="widget textList" id="recentUploads" style="margin-bottom: 15%;" widget="textList" refresh-url="dataGrabbers/fileList.php" refresh-rate="3" max="10" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
 		<span class="header">Recent Uploads</span>
