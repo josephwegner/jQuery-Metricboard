@@ -41,6 +41,18 @@ List Element
 </div>
 ```
 
+**Data Format:**
+```
+{
+	"items":
+		[
+			"<li>My Data</li>",
+			"<li>My Other Data</li>"
+		],
+	"lastID": "100"
+}
+```
+
 Count Element
 -------------
 * widget: mandatory, "number"
@@ -56,6 +68,11 @@ Count Element
 </div>
 ```
 
+**Data Format:**
+```
+5
+```
+
 Pie Chart Element
 -----------------
 * widget: mandatory, "pieChart"
@@ -68,6 +85,16 @@ Pie Chart Element
 ```
 <div class="widget" widget="pieChart" refresh-url="dataGrabbers/pieExample.php" refresh-rate="3" title="Daily Activity">
 </div>
+```
+
+**Data Format:**
+```
+{
+	"Category 1": 3,
+	"Category 2": 5,
+	"Category 3": 11,
+	"Category 4": 4
+}
 ```
 
 Contributors
