@@ -24,36 +24,25 @@ $(document).ready(function() {
 <body>
 <h1>Metricboard</h1>
 <div class="column" id="column1">
-	<div class="widget textList" id="recentUploads" style="margin-bottom: 15%;" widget="textList" refresh-url="dataGrabbers/fileList.php" refresh-rate="3" max="10" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
+	<div class="widget textList" id="recentUploads" style="margin-bottom: 15%;" widget="textList" refresh-url="dataGrabbers/listExample.php" refresh-rate="3" max="10" key="123456">
 		<span class="header">Recent Uploads</span>
 		<ul>
 		</ul>
 	</div>
-	<div class="fLeft widget halfWidth" id="numNonDownloaded" widget='number' refresh-url="dataGrabbers/numFiles.php" refresh-rate="3" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
+	<div class="fLeft widget halfWidth" id="numNonDownloaded" widget='number' refresh-url="dataGrabbers/countExample.php" refresh-rate="3" key="123456">
 		<span class='numberNumber'>0</span>
 		<span class='numberText'>new files</span>
 	</div>
-	<div class="fLeft widget halfWidth" id="numUsers" widget='number' refresh-url="dataGrabbers/loggedUsers.php" refresh-rate="3" key="3898326d690eacbb8cad7900f9c63e736cc79e4b">
+	<div class="fLeft widget halfWidth" id="numUsers" widget='number' refresh-url="dataGrabbers/countExample.php" refresh-rate="3" key="123456">
 		<span class='numberNumber'>0</span>
 		<span class='numberText'>users logged in</span>
 	</div>
 	<div class="clear"></div>
 </div>
 <div class="column" id="column2">
-	<!--<div class='widget oneThirdHeight' id='dailyUploads' widget='singleLine'>
-		<ul class='slData'>
-			<li><span class='slColumn'>Sunday</span><span class='slValue'>3</span></li>
-			<li><span class='slColumn'>Monday</span><span class='slValue'>8</span></li>
-			<li><span class='slColumn'>Tuesday</span><span class='slValue'>6</span></li>
-			<li><span class='slColumn'>Wednesday</span><span class='slValue'>7</span></li>
-			<li><span class='slColumn'>Thursday</span><span class='slValue'>5</span></li>
-			<li><span class='slColumn'>Friday</span><span class='slValue'>9</span></li>
-			<li><span class='slColumn'>Saturday</span><span class='slValue'>4</span></li>
-		</ul>
-	</div>-->
-	<div class="widget halfHeight" id="operationPercent" widget="pieChart" refresh-url="dataGrabbers/operationPercents.php" refresh-rate="3" title="Daily Activity">
+	<div class="widget halfHeight" id="operationPercent" widget="pieChart" refresh-url="dataGrabbers/pieExample.php" refresh-rate="3" title="Daily Activity">
 	</div>
-	<div class="widget textList" id="proofsOut" style="margin-bottom: 15%" widget="textList" useID="" refresh-url="dataGrabbers/proofsOut.php" refresh-rate="30" max="7">
+	<div class="widget textList" id="proofsOut" style="margin-bottom: 15%" widget="textList" useID="" refresh-url="dataGrabbers/listExample.php" refresh-rate="30" max="7">
 		<span class="header">Proofs Out</span>
 		<ul>
 		</ul>
@@ -61,7 +50,7 @@ $(document).ready(function() {
 	<div class="clear"></div>
 </div>
 <div class="column lastColumn" id="column3">
-	<div class="widget textList" id="schedule" style="margin-bottom: 15%" widget="textList" useID="" refresh-url="dataGrabbers/schedule.php" refresh-rate="30" max="15">
+	<div class="widget textList" id="schedule" style="margin-bottom: 15%" widget="textList" useID="" refresh-url="dataGrabbers/listExample.php" refresh-rate="30" max="15">
 		<span class="header">Schedule</span>
 		<ul>
 		</ul>
